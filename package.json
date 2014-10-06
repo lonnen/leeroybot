@@ -28,5 +28,8 @@
   "engines": {
     "node": ">= 0.8.x",
     "npm": ">= 1.1.x"
+  },
+  "scripts": {
+    "test": "grep 'redis-brain.coffee' hubot-scripts.json"
   }
 }
