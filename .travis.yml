@@ -1,0 +1,4 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: OBR6sjiElqDS3osw65KDANP5HYCS/SD+cg+MgalI1kJZJTjfi2KaCkZueGj8mAk5zUFYNRJQEuXuSumg2G37THGoIoiXBkcA/DwzGEzqxmhutQn50YtzX9WmGwNKRcPocny1eWlPbfiNO0ZehEzT//8POco60MlimnyjSgEUA6c=
