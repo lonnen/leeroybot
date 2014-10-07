@@ -4,4 +4,7 @@ node_js:
 deploy:
   provider: heroku
   api_key:
-    secure: grqIdtuhtVOng4kjwNi/bCtNc3OFqrVjnbb919XTw/I3Ep8gRUJ84TPSwqFyggrJPWi/8btBjXYbGSvoYq0UdD59IBU+Y4m2oSd43lrzINf9JZxqSGWTe+sAlmOKP57iBDu+aw/8f6o92IuZiIv3tBhaaLAPXvLPEIDVxLnL+/0=
+    secure: LFo9cRs9NEKT5JU/MoZ15xPG/uDf+DHrLRH0+mEysUMO4oGmojWwz8K6XB3F5p2Sx/u83lb/ThRZbtVBlINwkdEzFeT66jLU6wCYjHh85fPpPpDdDEgVy/6pBjezURI6+MvLU7gOBFcyY6/mXG+7Gc81jrlZV1Ok/lGzUy/QMeY=
+  app: leeroy-bot
+  on:
+    repo: lonnen/leeroybot
