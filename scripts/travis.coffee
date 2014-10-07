@@ -24,9 +24,9 @@ url = require('url')
 querystring = require('querystring')
 
 # hack attack!
-# a hardcoded map of username to irc handle
+# a hardcoded map of email to irc handle
 usernameMap =
-    "Peter Bengtsson": "peterbe"
+    "author_email": "peterbe"
 
 
 module.exports = (robot) ->
@@ -50,12 +50,12 @@ module.exports = (robot) ->
     user.room = query.room if query.room
     user.type = query.type if query.type
 
-    if payload.author_name in usernameMap
-      payload.author_name = usernameMap[payload.author_name]
-
     try
       payload = JSON.parse req.body.payload
-      robot.send user, "[#{payload.repository.name}] #{payload.author_name} PR build #{payload.status_message.toUpperCase()}: #{payload.compare_url}"
+      # swap email for irc handle if possible
+      if payload.author_email in usernameMap
+        payload.author_email = usernameMap[payload.author_email]
+      robot.send user, "[#{payload.repository.name}] #{payload.author_email} PR build #{payload.status_message.toUpperCase()}: #{payload.compare_url}"
 
     catch error
       console.log "travis hook error: #{error}. Payload: #{req.body.payload}"
