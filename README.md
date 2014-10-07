@@ -39,9 +39,9 @@ the `./scripts` folder. More are available as part of the external
 [hubot script catalog][hubot-script-catalog], and as stand alone packages,
 like those published by the [Hubot Scripts][hubot-scripts] organization.
 
-Merely have a script installed is not enough to load it at runtime. Scripts must
-be added to either `external-scripts.json` or `hubot-scripts.json` in order to
-be loaded when LeeroyBot is run.
+Any script in `./scripts` will be loaded with the bot. External scripts must be
+explicitly identified in either `external-scripts.json` or `hubot-scripts.json`
+in order to be loaded when LeeroyBot is run.
 
 Read up on the details in the [script guide][script-guide].
 
