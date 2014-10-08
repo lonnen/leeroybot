@@ -72,10 +72,6 @@ jenkinsDescribe = (msg) ->
 
     req = msg.http(path)
 
-    if process.env.HUBOT_JENKINS_AUTH
-      auth = new Buffer(process.env.HUBOT_JENKINS_AUTH).toString('base64')
-      req.headers Authorization: "Basic #{auth}"
-
     req.header('Content-Length', 0)
     req.get() (err, res, body) ->
         if err
@@ -153,10 +149,6 @@ jenkinsLast = (msg) ->
 
     req = msg.http(path)
 
-    if process.env.HUBOT_JENKINS_AUTH
-      auth = new Buffer(process.env.HUBOT_JENKINS_AUTH).toString('base64')
-      req.headers Authorization: "Basic #{auth}"
-
     req.header('Content-Length', 0)
     req.get() (err, res, body) ->
         if err
@@ -179,10 +171,6 @@ jenkinsList = (msg) ->
     url = process.env.HUBOT_JENKINS_URL
     filter = new RegExp(msg.match[2], 'i')
     req = msg.http("#{url}/api/json")
-
-    if process.env.HUBOT_JENKINS_AUTH
-      auth = new Buffer(process.env.HUBOT_JENKINS_AUTH).toString('base64')
-      req.headers Authorization: "Basic #{auth}"
 
     req.get() (err, res, body) ->
         response = ""
