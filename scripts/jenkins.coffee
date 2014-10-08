@@ -17,6 +17,7 @@
 #   hubot jenkins list <filter> - lists Jenkins jobs
 #   hubot jenkins describe <job> - Describes the specified Jenkins job
 #   hubot jenkins last <job> - Details about the last build for the specified Jenkins job
+#   hubot jenkins status <job> - alias for last
 
 #
 # Author:
@@ -145,6 +146,8 @@ jenkinsDescribe = (msg) ->
 jenkinsLast = (msg) ->
     url = process.env.HUBOT_JENKINS_URL
     job = msg.match[1]
+
+    if not job then msg.send "Which job, now?"
 
     path = "#{url}/job/#{job}/lastBuild/api/json"
 
