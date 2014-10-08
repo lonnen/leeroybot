@@ -3,9 +3,43 @@
 This is Mozilla Web Engineering's customized version of GitHub's chat bot, hubot.
 
 
-### Auto Deploy
+## Auto Deploy
 
 LeeroyBot deploys on change to master.
+
+## Functionality
+
+Slightly lobotomised from what you might expect.
+
+```
+ debug - {user: <user object to send message to>}
+ <user> is a badass guitarist - assign a role to a user
+ <user> is not a badass guitarist - remove a role from a user
+ die - End leeroybot process
+ echo <text> - Reply back with <text>
+ fake event <event> - Triggers the <event> event for debugging reasons
+ help - Displays all of the help commands that leeroybot knows about.
+ help <query> - Displays all help commands that match <query>.
+ jenkins b <jobNumber> - builds the job specified by jobNumber. List jobs to get number.
+ jenkins build <job> - builds the specified Jenkins job
+ jenkins build <job>, <params> - builds the specified Jenkins job with parameters as
+                      key=value&key2=value2
+ jenkins describe <job> - Describes the specified Jenkins job
+ jenkins last <job> - Details about the last build for the specified Jenkins job
+ jenkins list <filter> - lists Jenkins jobs
+ jenkins status <job> - alias for last
+ ping - Reply with pong
+ show storage - Display the contents that are persisted in the brain
+ show users - Display all users that leeroybot knows about
+ time - Reply with current time
+ translate me <phrase> - Searches for a translation for the <phrase> and then prints that bad
+                      boy out.
+ translate me from <source> into <target> <phrase> - Translates <phrase> from <source> into
+                      <target>. Both <source> and <target> are optional
+ travis <user>/<repo> - Returns the build status of https://github.com/<user>/<repo>
+ who is <user> - see what roles a user has
+ ship it - Display a motivation squirrel
+```
 
 
 ### Testing Hubot Locally
