@@ -26,7 +26,8 @@ querystring = require('querystring')
 # hack attack!
 # a hardcoded map of email to irc handle
 usernameMap =
-    "author_email": "peterbe"
+    "mail@peterbe.com": "peterbe"
+    "chris.lonnen@gmail.com": "lonnen"
 
 
 module.exports = (robot) ->
@@ -52,14 +53,13 @@ module.exports = (robot) ->
 
     try
       payload = JSON.parse req.body.payload
-      # swap email for irc handle if possible
-      if payload.author_email in usernameMap
-        payload.author_email = usernameMap[payload.author_email]
-      robot.send user, "[#{payload.repository.name}] #{payload.author_email} PR build #{payload.status_message.toUpperCase()}: #{payload.compare_url}"
+      unless payload.type is "pull_request"
+        console.log "ignoring travis hook type: #{payload.type}"
+        res.end JSON.stringify { send: true }
 
+      author = usernameMap[payload.author_email] || payload.author_email
+      robot.send user, "[#{payload.repository.name}] #{payload.author_email} PR build #{payload.status_message.toUpperCase()}: #{payload.compare_url}"
     catch error
       console.log "travis hook error: #{error}. Payload: #{req.body.payload}"
 
-    res.end JSON.stringify {
-      send: true #some client have problems with and empty response, sending that response ion sync makes debugging easier
-    }
+    res.end JSON.stringify { send: true }
