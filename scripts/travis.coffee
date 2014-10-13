@@ -56,7 +56,7 @@ module.exports = (robot) ->
       payload = JSON.parse req.body.payload
       
       if process.env.HUBOT_TRAVIS_DEBUG
-        console.log "travis hook received: #{payload}"
+        console.log "travis hook received: #{payload.type}"
 
       unless payload.type is "pull_request"
         console.log "ignoring travis hook type: #{payload.type}"
