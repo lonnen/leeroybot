@@ -54,13 +54,14 @@ module.exports = (robot) ->
 
     try
       payload = JSON.parse req.body.payload
-      
+
       if process.env.HUBOT_TRAVIS_DEBUG
         console.log "travis hook received: #{payload.type}"
 
       unless payload.type is "pull_request"
         console.log "ignoring travis hook type: #{payload.type}"
         res.end JSON.stringify { send: true }
+        return
 
       email = payload.author_email
       author = if email in usernameMap then usernameMap[email] else email
