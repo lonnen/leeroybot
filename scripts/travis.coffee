@@ -53,9 +53,11 @@ module.exports = (robot) ->
     user.type = query.type if query.type
 
     try
-      if process.env.HUBOT_TRAVIS_DEBUG then console.log "travis hook received: #{payload}"
-
       payload = JSON.parse req.body.payload
+      
+      if process.env.HUBOT_TRAVIS_DEBUG
+        console.log "travis hook received: #{payload}"
+
       unless payload.type is "pull_request"
         console.log "ignoring travis hook type: #{payload.type}"
         res.end JSON.stringify { send: true }
