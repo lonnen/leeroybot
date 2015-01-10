@@ -39,8 +39,8 @@ module.exports = (robot) ->
 
       #email = payload.author_email
       #author = if email in usernameMap then usernameMap[email] else email
-      #robot.send user, "[#{payload.repository.name}] #{author} PR build #{payload.status_message.toUpperCase()}: #{payload.compare_url}"
+      #robot.send user, "[#{payload.repository.name}] #{author} PR build {payload.status_message.toUpperCase()}: #{payload.compare_url}"
     catch error
-      console.log "Read the Docs hook error: #{error}. Payload: #{req.body.payload}"
+      console.log "Read the Docs hook error: #{error}. Payload: #{req.body}"
 
     res.end JSON.stringify { send: true }
