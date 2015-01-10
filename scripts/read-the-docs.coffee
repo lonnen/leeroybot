@@ -32,14 +32,8 @@ module.exports = (robot) ->
     try
       payload = JSON.parse req.body
 
-      if process.env.HUBOT_READ_THE_DOCS_DEBUG
-        console.log "Read the Docs hook received: #{payload}"
+      console.log "Read the Docs hook received: #{payload}"
 
-
-
-      #email = payload.author_email
-      #author = if email in usernameMap then usernameMap[email] else email
-      #robot.send user, "[#{payload.repository.name}] #{author} PR build {payload.status_message.toUpperCase()}: #{payload.compare_url}"
     catch error
       console.log "Read the Docs hook error: #{error}. Payload: #{req.body}"
 
