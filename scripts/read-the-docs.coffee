@@ -30,10 +30,10 @@ module.exports = (robot) ->
     user.type = query.type if query.type
 
     try
-      payload = JSON.parse req.body.payload
+      payload = JSON.parse req.body
 
       if process.env.HUBOT_READ_THE_DOCS_DEBUG
-        console.log "Read the Docs hook received: #{payload.type}"
+        console.log "Read the Docs hook received: #{payload}"
 
 
 
