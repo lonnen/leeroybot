@@ -25,7 +25,7 @@ helpContents = (name, commands) ->
       margin: 0;
     }
     body {
-      background: #E6E6E6;
+      background: #FFFFFF;
       color: rgb(74, 64, 64);
       font-family: monospace;
     }
@@ -37,7 +37,7 @@ helpContents = (name, commands) ->
       font-size: 14px;
     }
     p {
-      border-bottom: 1px solid rgb(217, 126, 98);
+      border-bottom: 1px solid #E6E6E6;
       padding: 15px 10px;
     }
     p:last-child {
