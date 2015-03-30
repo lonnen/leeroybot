@@ -25,8 +25,8 @@ helpContents = (name, commands) ->
       margin: 0;
     }
     body {
-      background: rgb(250, 250, 220);
-      color: #E6E6E6;
+      background: #E6E6E6;
+      color: rgb(74, 64, 64);
       font-family: monospace;
     }
     h1 {
