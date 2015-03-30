@@ -21,22 +21,24 @@ helpContents = (name, commands) ->
   <title>#{name} Help</title>
   <style type="text/css">
     body {
-      background: #d3d6d9;
-      color: #636c75;
-      text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
-      font-family: Helvetica, Arial, sans-serif;
+      background: rgb(250, 250, 220);
+      color: rgb(74, 64, 64);
+      font-family: monospace;
+      padding: 0;
+      margin: 0;
     }
     h1 {
-      margin: 8px 0;
+      margin: 8px;
       padding: 0;
+      background: rgb(151, 210, 178);
     }
     .commands {
-      font-size: 13px;
+      font-size: 14px;
     }
     p {
-      border-bottom: 1px solid #eee;
-      margin: 6px 0 0 0;
-      padding-bottom: 5px;
+      border-bottom: 1px solid rgb(217, 126, 98);
+      margin: 0;
+      padding: 15px 10px;
     }
     p:last-child {
       border: 0;
