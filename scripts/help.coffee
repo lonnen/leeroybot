@@ -64,6 +64,12 @@ module.exports = (robot) ->
         msg.send "No available commands match #{filter}"
         return
 
+    # sending individually floods the server
+    # so if we know the url, send that instead
+    if process.eng.HUBOT_HEROKU_KEEPALIVE_URL
+      msg.send "#{process.env.HUBOT_HEROKU_KEEPALIVE_URL}#{robot.name}/help"
+      return
+
     prefix = robot.alias or robot.name
     cmds = cmds.map (cmd) ->
       cmd = cmd.replace /hubot/ig, robot.name
