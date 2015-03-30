@@ -20,16 +20,17 @@ helpContents = (name, commands) ->
   <meta charset="utf-8">
   <title>#{name} Help</title>
   <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+    }
     body {
       background: rgb(250, 250, 220);
       color: rgb(74, 64, 64);
       font-family: monospace;
-      padding: 0;
-      margin: 0;
     }
     h1 {
-      margin: 8px;
-      padding: 0;
+      padding: 8px;
       background: rgb(151, 210, 178);
     }
     .commands {
@@ -37,7 +38,6 @@ helpContents = (name, commands) ->
     }
     p {
       border-bottom: 1px solid rgb(217, 126, 98);
-      margin: 0;
       padding: 15px 10px;
     }
     p:last-child {
