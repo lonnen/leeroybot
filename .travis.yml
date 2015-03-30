@@ -1,10 +1,3 @@
 language: node_js
 node_js:
 - '0.10'
-deploy:
-  provider: heroku
-  api_key:
-    secure: LFo9cRs9NEKT5JU/MoZ15xPG/uDf+DHrLRH0+mEysUMO4oGmojWwz8K6XB3F5p2Sx/u83lb/ThRZbtVBlINwkdEzFeT66jLU6wCYjHh85fPpPpDdDEgVy/6pBjezURI6+MvLU7gOBFcyY6/mXG+7Gc81jrlZV1Ok/lGzUy/QMeY=
-  app: leeroy-bot
-  on:
-    repo: lonnen/leeroybot
