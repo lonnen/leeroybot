@@ -26,12 +26,12 @@ helpContents = (name, commands) ->
     }
     body {
       background: rgb(250, 250, 220);
-      color: rgb(74, 64, 64);
+      color: #E6E6E6;
       font-family: monospace;
     }
     h1 {
       padding: 8px;
-      background: rgb(151, 210, 178);
+      background: #97D38B;
     }
     .commands {
       font-size: 14px;
