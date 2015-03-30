@@ -38,7 +38,8 @@ helpContents = (name, commands) ->
     }
     p {
       border-bottom: 1px solid #E6E6E6;
-      padding: 15px 10px;
+      padding: 15px 8px;
+      margin: 0 6px;
     }
     p:last-child {
       border: 0;
