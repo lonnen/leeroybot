@@ -1,1 +1,1 @@
-["hubot-heroku-keepalive"]
+["hubot-heroku-keepalive", "hubot-aws-sns"]
